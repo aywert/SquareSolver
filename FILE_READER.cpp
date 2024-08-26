@@ -79,7 +79,7 @@ struct Data // test data
 GREETING_STATUS start_greeting(void);
 void start_tester(void);
 void solve_square(void);
-SCANF_STATUS scan_Coeffs(Coeffs* data);
+SCANF_STATUS scan_coeffs(Coeffs* data);
 void calculate_answer(Coeffs* ptr_coeff, Roots* ptr_root);
 int return_n_root(Coeffs* ptr_coeffs, double* link_d);
 void print_answer(Roots* ptr_roots);
@@ -100,12 +100,12 @@ void solve_square(void)
     Roots roots  = {};
     Coeffs coeff = {};
 
-    assert(scan_Coeffs(&coeff) == SUCCESS);
+    assert(scan_coeffs(&coeff) == SUCCESS);
     calculate_answer(&coeff, &roots);
     print_answer(&roots);
 }
 
-SCANF_STATUS scan_Coeffs(Coeffs* ptr_coeff)
+SCANF_STATUS scan_coeffs(Coeffs* ptr_coeff)
 {
     assert(ptr_coeff != NULL);
 
@@ -313,6 +313,7 @@ void start_tester(void)
         check_sample(All_tests);
     }
 }
+
 GREETING_STATUS start_greeting (void)
 {
     printf("To initiate tester please enter 'yes'\n");
